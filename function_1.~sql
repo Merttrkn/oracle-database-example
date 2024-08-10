@@ -1,0 +1,14 @@
+-- id'si verilen kitabýn türünü veren fonksiyon yazalým
+create or replace function k_tür(k_id kitapçeþit.idtürü%type) 
+       return varchar2
+       Is w_sonuc varchar2(20);
+       Begin
+         select kitaptürü into w_sonuc
+         from kitapçeþit
+         where idtürü = k_id;
+         
+         return (w_sonuc);
+       End;
+
+select k_tür(1) from dual;
+
